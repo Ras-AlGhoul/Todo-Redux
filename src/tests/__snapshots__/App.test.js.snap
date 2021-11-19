@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Element Testing should match snapshot 1`] = `
+<div
+  className="App"
+  data-testid="app"
+>
+  <form
+    className="form"
+    data-testid="form"
+    onSubmit={[Function]}
+  >
+    <label>
+       Title 
+    </label>
+    <input
+      onChange={[Function]}
+      placeholder="Add a task..."
+      type="text"
+      value=""
+    />
+    <button
+      className="form__btn"
+      type="submit"
+    >
+       Add 
+    </button>
+  </form>
+</div>
+`;

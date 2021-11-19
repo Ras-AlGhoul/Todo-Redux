@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 auto;
+  background-image: url("../assets/3.jpg");
+  padding: 40px;
+  max-width: 900 px;
+  background-size: cover;
+  text-align: center;
+}
+
+ul{
+  list-style: none;
+}
+
+.form{
+  text-align: left;
+  padding: 35px 20px;
+  background-color:rgba(154, 143, 137, 0.626) ;
+  border-radius: 25px;
+  height: 180px;
+}
+
+.form__label{
+  font-size: 40px;
+}
+
+.form__input{
+  height: 20px;
+  height: 40px;
+  width: 100%;
+}
+.form__btn {
+  float: right;
+  margin-top: 16px;
+  border: 1px solid black;
+  background: none;
+  height: 30px;
+  width: 60px;
+  border-radius: 7px;
+  color: black;
+}
+
+.form__btn:hover{
+  color: azure;
+  background-color: black;
+}
+
+.card{
+  background-color: #b8b8b889;
+  text-align: left;
+  padding: 35px 20px;
+  border-radius: 25px;
+  margin-top: 40px;
+}
+
+.card__title{
+  font-size: 20px;
+}
+
+.done-card{
+  text-align: left;
+  text-decoration: line-through;
+  padding: 35px 20px;
+  border-radius: 25px;
+  margin-top: 40px;
+  background-color: #39A388;
+  bottom: 0px;
+  list-style: none;
+}
+
+.card__removbtn{
+  float: right;
+  height: 30px;
+  width: 60px;
+  border: 1px solid red;
+  background: none;
+  border-radius: 7px 0px 0px 7px;
+  color: red;
+}
+
+.done-card__title{
+  font-size: 30px;
+}
+
+.card__removbtn:hover{
+  color: azure;
+  background-color: red;
+}
+
+.card__btn1{
+  float: right;
+  border: 1px solid black;
+  background: none;
+  height: 30px;
+  width: 60px;
+  border-radius: 0px 7px 7px 0px;
+  color: black;
+}
+.card__btn1:hover{
+  color: azure;
+  background-color: black;
+}
+.card__btn2{
+  float: right;
+  border: 1px solid black;
+  background: none;
+  height: 30px;
+  width: 60px;
+  border-radius: 7px 0px 0px 7px;
+  color: black;
+}
+.card__btn2:hover{
+  color: azure;
+  background-color: black;
+}
+.app__btn{
+  margin-top: 16px;
+  border: 1px solid black;
+  background: black;
+  height: 30px;
+  width: 160px;
+  border-radius: 7px;
+  color: white;
+}
+.app__btn:hover{
+  color: black;
+  background-color:transparent;
+}
+
+.card__btn{
+  margin-top: 16px;
+  border: 1px solid black;
+  background: none;
+  height: 30px;
+  width: 70px;
+  border-radius: 7px;
+  color: black;
+}
+.card__btn:hover{
+  color: azure;
+  background-color: black;
+}
+
+.card__input{
+  font-size: 30px;
+  height: 20px;
+  height: 40px;
+  width: 100%;
+}
