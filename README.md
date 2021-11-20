@@ -1,3 +1,7 @@
+
+<img width="1434" alt="Screenshot 2021-11-19 at 09 15 34" src="https://user-images.githubusercontent.com/77113737/142588761-38b1f40c-3f7b-42c2-a66c-17d0db74559d.png">
+
+
 # Building a To Do list with React and Redux
 
 Your task is to create a simple to do list app written in React with Redux as a state store.
