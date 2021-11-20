@@ -2,15 +2,15 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { markUndone, removeTodo } from '../reducers/actions';
 
-const DoneCard = ({ task }) => {
+const DoneCard = ({ task, id }) => {
   const dispatch = useDispatch();
 
   const handleClickRemove = () => {
-    dispatch(removeTodo(task));
+    dispatch(removeTodo(task, id));
   };
 
   const handleClick = () => {
-    dispatch(markUndone(task));
+    dispatch(markUndone(task, id));
   };
 
   return (

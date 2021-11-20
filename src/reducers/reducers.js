@@ -42,7 +42,7 @@ const inputReducer = (initState = '', action) => {
   }
 };
 
-const theEditInputReducer = (initState = { todo: '', previousTask: '' }, action) => {
+const theEditInputReducer = (initState = { todo: '', id: 0 }, action) => {
   let state = initState;
   switch (action.type) {
     case types.SET_EDITINPUT:
@@ -56,23 +56,24 @@ const theEditInputReducer = (initState = { todo: '', previousTask: '' }, action)
 const listReducer = (initState = initialState, action) => {
   const state = initState;
   switch (action.type) {
-    case types.ADD_TODO:
+    case 'ADD_TODO':
       state.todos = [...state.todos, action.payload];
       return { ...state };
-    case types.EDIT_TODO:
+    case 'EDIT_TODO':
       state.todos = state.todos
-        .map((item => (item === action.payload.previousTask ? action.payload.todo : item)));
+        .map((item => (item.id === action.payload.id
+          ? action.payload : item)));
       return { ...state };
-    case types.REMOVE_TODO:
-      state.doneTodos = state.doneTodos.filter(item => item !== action.payload);
+    case 'REMOVE_TODO':
+      state.doneTodos = state.doneTodos.filter(item => item.id !== action.payload.id);
       return { ...state };
-    case types.MARK_DONE:
-      state.todos = state.todos.filter(item => item !== action.payload);
+    case 'MARK_DONE':
+      state.todos = state.todos.filter(item => item.todo !== action.payload.todo);
       state.doneTodos = [...state.doneTodos, action.payload];
       return { ...state };
-    case types.MARK_UNDONE: {
+    case 'MARK_UNDONE': {
       const moveLeft = arr => [...arr.slice(1), arr[0]];
-      state.doneTodos = state.doneTodos.filter(item => item !== action.payload);
+      state.doneTodos = state.doneTodos.filter(item => item.todo !== action.payload.todo);
       state.todos = [...state.todos, action.payload];
       moveLeft(state.doneTodos);
       return { ...state };

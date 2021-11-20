@@ -6,19 +6,18 @@ import {
   setEditInput,
 } from '../reducers/actions';
 
-const Card = ({ task }) => {
+const Card = ({ task, id }) => {
   const dispatch = useDispatch();
   const editInputReducer = useSelector(state => state.theEditInputReducer);
   const [toggle, setToggle] = useState(false);
 
   const handleClickDone = () => {
-    dispatch(markDone(task));
+    dispatch(markDone(task, id));
   };
   const handleEdit = e => {
     e.preventDefault();
     dispatch(edit(editInputReducer));
     setToggle(false);
-    dispatch(setEditInput({ todo: '', previousTask: '' }));
   };
 
   return (
@@ -28,7 +27,7 @@ const Card = ({ task }) => {
       )}
       {toggle && (
         <form onSubmit={handleEdit}>
-          <input className='card__input' value={editInputReducer.todo} onChange={({ target: { value } }) => dispatch(setEditInput({ todo: value, previousTask: task }))} />
+          <input className='card__input' value={ editInputReducer.todo } onChange={({ target: { value } }) => dispatch(setEditInput({ todo: value, id }))} />
           <button className='card__btn' type='submit'>Cofirm</button>
         </form>
       )}

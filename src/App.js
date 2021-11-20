@@ -18,17 +18,19 @@ const App = () => {
   return (
     <div className='App' data-testid='app'>
       <Form />
-      {todosList.map((item, index) => <Card
+      {todosList.sort((a, b) => b.id - a.id).map((item, index) => <Card
         key={index}
-        task={item}
-      />).reverse()
+        task={item.todo}
+        id = {item.id}
+      />)
       }
       <button className='app__btn' onClick={() => dispatch(setToggle(true))}>Unhide/Hide done tasks</button>
       {toggleReducer && (
-        doneTodoList.map((item, index) => <DoneCard
+        doneTodoList.sort((a, b) => b.id - a.id).map((item, index) => <DoneCard
           key={index}
-          task={item}
-        />).reverse()
+          task={item.todo}
+          id = {item.id}
+        />)
       )
       }
     </div>
