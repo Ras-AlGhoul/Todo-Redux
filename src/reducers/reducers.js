@@ -56,22 +56,22 @@ const theEditInputReducer = (initState = { todo: '', id: 0 }, action) => {
 const listReducer = (initState = initialState, action) => {
   const state = initState;
   switch (action.type) {
-    case 'ADD_TODO':
+    case types.ADD_TODO:
       state.todos = [...state.todos, action.payload];
       return { ...state };
-    case 'EDIT_TODO':
+    case types.EDIT_TODO:
       state.todos = state.todos
         .map((item => (item.id === action.payload.id
           ? action.payload : item)));
       return { ...state };
-    case 'REMOVE_TODO':
+    case types.REMOVE_TODO:
       state.doneTodos = state.doneTodos.filter(item => item.id !== action.payload.id);
       return { ...state };
-    case 'MARK_DONE':
+    case types.MARK_DONE:
       state.todos = state.todos.filter(item => item.todo !== action.payload.todo);
       state.doneTodos = [...state.doneTodos, action.payload];
       return { ...state };
-    case 'MARK_UNDONE': {
+    case types.MARK_UNDONE: {
       const moveLeft = arr => [...arr.slice(1), arr[0]];
       state.doneTodos = state.doneTodos.filter(item => item.todo !== action.payload.todo);
       state.todos = [...state.todos, action.payload];
